@@ -1,23 +1,20 @@
 {
-  "name": "reveal.js",
-  "version": "3.7.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
-  "subdomain": "revealjs",
+  "name": "...-slides",
+  "version": "0.1.0",
+  "homepage": "https://ivos.github.io/...-slides",
   "main": "js/reveal.js",
   "scripts": {
-    "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Ivo Maixner",
+    "email": "ivo.maixner@gmail.com",
+    "web": "https://lastware.cz"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git@github.com:ivos/...-slides.git"
   },
   "engines": {
     "node": ">=4.0.0"
