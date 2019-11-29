@@ -1,0 +1,56 @@
+.reveal blockquote {
+	font-style: normal;
+	text-align: left;
+	font-size: 80%;
+	box-shadow: none;
+	border-left: 0.2em solid rgba(64, 64, 64, .5);
+	padding-left: 1em;
+}
+
+.reveal blockquote p {
+	margin: 10px 0;
+}
+
+.text-muted {
+	color: #6c757d;
+}
+
+.separated {
+	margin-top: 2rem !important;
+}
+
+.reveal .slides section .fragment.step-fade-out {
+	opacity: 1;
+	display: inline;
+	visibility: visible;
+}
+
+.reveal .slides section .fragment.step-fade-out.visible {
+	opacity: 0;
+	display: none;
+}
+
+.reveal .slides section .fragment.step-fade-in {
+	display: none;
+}
+
+.reveal .slides section .fragment.step-fade-in.visible {
+	display: inline;
+}
+
+.reveal :not(pre) > code {
+	font-size: 80%;
+	background: #eeeeee;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 10px;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	text-transform: none;
+}
