@@ -1,6 +1,6 @@
-# ... slides
+# Testing DB apps slides
 
-Site: https://ivos.github.io/...-slides
+Site: https://ivos.github.io/testing-db-apps-slides/
 
 ## License
 
