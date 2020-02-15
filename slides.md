@@ -62,7 +62,7 @@ Notes:
 
 ## Generic test approach
 
-1. Setup DB state
+1. Setup DB into a known state
 2. Execute system feature under test
 3. Verify system response
 4. Verify DB state
@@ -101,6 +101,13 @@ Notes:
     - <!-- .element: class="fragment" --> &Implies; Dataset not maintained **(!)**
 
 
+Notes:
+- People loose track of what data is needed by which tests
+    - they don't want to disrupt other tests
+    - so they keep on only ADDING to the data set
+    - so that after some time it becomes a huge, messy pile of crap
+
+
 ^^
 
 <!-- .slide: data-transition="fade" -->
@@ -115,6 +122,8 @@ Notes:
 
 
 Notes:
+- E.g. list: verify only length,
+    - database, verify only 1 - 2 columns (attributes)
 - False negative:
     - (Ineffective test)
     - Undetected until bug reported from  
@@ -135,6 +144,11 @@ Notes:
     - <!-- .element: class="fragment" --> &Implies; False negatives. **Don't!**
 
 
+Notes:
+- If you have bug in app AND you are using that buggy code to test the app,
+    - how do you know that the test works?!
+
+
 ^^^^
 
 ## DB setup & verification
@@ -146,7 +160,8 @@ Notes:
 
 
 Notes:
-- I am the author, others contributed
+- I am the author, (others contributed)
+- So this is an ad...
 - 7 projects Light Air, 3 project before that DbUnit / Unitils
 - When I come to a project with backend in Java
     - Light Air becomes the tool to be used
@@ -303,8 +318,8 @@ and ISO 8601 duration
 ## Variables
 
 - <!-- .element: class="fragment" --> Start a value with `$` to define a var
-- <!-- .element: class="fragment" --> First occurence: reads value from DB
-- <!-- .element: class="fragment" --> Following occurences: verify value matches
+- <!-- .element: class="fragment" --> First occurrence: reads value from DB
+- <!-- .element: class="fragment" --> Following occurrences: verify value matches
 - <!-- .element: class="fragment" --> Verify consistency of generated values
     - <!-- .element: class="fragment" --> Surrogate foreign keys
 
@@ -341,6 +356,8 @@ and ISO 8601 duration
 
 Notes:
 - Setup: value required, but not relevant
+- Mapping: generate unique values in setup,
+    - then verify correct mapping into response
 
 
 ^^^^
@@ -374,6 +391,13 @@ Notes:
   :aliases {"db-update" ["run" "-m" "lein-run/db-update"]}
 )
 ```
+
+
+Notes:
+- Add "db-update" alias to Leiningen,
+    - then run `lein db-update` to generate XSD
+- Call Light Air `Api/generateXsd`
+
 
 ^^^^
 
@@ -467,6 +491,13 @@ Notes:
 ```
 
 
+Notes:
+- A couple of support functions to simplify using Light Air in a particular project
+- Have to `Api/initialize` and `Api/shutdown` Light Air
+- `db-setup` and `db-verify` functions to make test code shorter
+- We want to put the setup and verify XML files next to the corresponding test Clojure namespace
+
+
 ^^
 
 <!-- .slide: data-transition="fade" -->
@@ -517,7 +548,7 @@ Notes:
 
 ## Things to test
 
-- <!-- .element: class="fragment" --> Ok:
+- <!-- .element: class="fragment" --> Ok (success):
     <span class="fragment">full,</span>
     <span class="fragment">minimal,</span>
     <span class="fragment">search variants</span>
@@ -534,6 +565,10 @@ Notes:
 - <!-- .element: class="fragment" --> HTTP:
     <span class="fragment">response codes,</span>
     <span class="fragment">headers</span>
+
+
+Notes:
+- Favorite test cases that we identified over time
 
 
 ^^
@@ -568,12 +603,14 @@ Medium app (20 tables)
 
 <!-- .slide: data-transition="fade" -->
 
-## Test strategy
-### ...of the past
+## Test strategy ...of the past
 
 - <!-- .element: class="fragment" --> Testing pyramid
-    - (low) unit > system > UI (high)
+    - UI tests &emsp; (high benefit, pricey)
+    - system tests
+    - unit tests &emsp; (low benefit, cheap)
 - <!-- .element: class="fragment" --> Balance time (write & run) vs. benefit
+- <!-- .element: class="fragment" --> Unit > system > UI tests
 
 
 ^^
