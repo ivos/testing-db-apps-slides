@@ -10,6 +10,15 @@ Ivo Maixner
 - Projects and companies tiny to big
 - Programmer, analyst, tester, ops, support, team lead
 
+## TL;DR
+
+Stop writing unit tests, start writing system tests!
+While system tests are still regarded as more expensive,
+the truth is that over the last years,
+they have become comparably cheap to write and execute,
+while giving you substantially more confidence
+in your application's functionality.
+
 ## Abstract
 
 > Testing database applications in Java and Clojure - a practical guide to system tests.
@@ -40,4 +49,4 @@ This work is licensed under a
 </a>
 </p>
 
-Copyright (C) 2019 Ivo Maixner, https://lastware.cz
+Copyright (C) 2019 Ivo Maixner, https://www.lastware.cz
