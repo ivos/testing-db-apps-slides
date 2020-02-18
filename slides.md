@@ -542,6 +542,10 @@ Notes:
     3. Compare as strings
 
 
+Notes:
+- Assumes _Compojure_
+
+
 ^^^^
 
 <!-- .slide: data-transition="fade" -->
@@ -551,7 +555,8 @@ Notes:
 - <!-- .element: class="fragment" --> Ok (success):
     <span class="fragment">full,</span>
     <span class="fragment">minimal,</span>
-    <span class="fragment">search variants</span>
+    <span class="fragment">search variants,</span>
+    <span class="fragment">sorting</span>
 - <!-- .element: class="fragment" --> Validations:
     <span class="fragment">empty,</span>
     <span class="fragment">long,</span>
@@ -660,6 +665,7 @@ Notes:
 
 Notes:
 - Testing pyramid is outdated idea, for years already
+- Algorithms: scoring, calculating payment schedule
 
 
 ^^^^
